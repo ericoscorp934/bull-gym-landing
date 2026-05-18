@@ -209,24 +209,45 @@
         <path d="M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"></path>
       </svg>
     </div>
-    <span class="text-2xl font-black tracking-tighter italic">BULL</span>
+    <!-- Logo links back to top/hero -->
+    <a href="#hero" class="text-2xl font-black tracking-tighter italic text-white hover:text-yellow-400 transition-colors">BULL</a>
   </div>
   <div class="hidden md:flex bg-white/10 px-6 py-2 rounded-full backdrop-blur-sm border border-white/10">
     <ul class="flex gap-8 text-sm font-semibold uppercase tracking-widest">
-      <li><a class="hover:text-yellow-400 transition-colors" href="#">About</a></li>
-      <li><a class="hover:text-yellow-400 transition-colors" href="#">Membership</a></li>
-      <li><a class="hover:text-yellow-400 transition-colors" href="#">Blog</a></li>
-      <li><a class="hover:text-yellow-400 transition-colors" href="#">Contact</a></li>
+      <li><a class="hover:text-yellow-400 transition-colors" href="#about">About</a></li>
+      <li><a class="hover:text-yellow-400 transition-colors" href="#membership">Membership</a></li>
+      <li><a class="hover:text-yellow-400 transition-colors" href="#stories">Stories</a></li>
+      <li><a class="hover:text-yellow-400 transition-colors" href="#contact">Contact</a></li>
     </ul>
   </div>
-  <button class="bg-white text-black p-2 rounded flex items-center gap-2 font-bold uppercase text-xs px-4">
+  <!-- Mobile menu button -->
+  <button onclick="toggleMobileMenu()" class="bg-white text-black p-2 rounded flex items-center gap-2 font-bold uppercase text-xs px-4">
     Menu
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
   </button>
 </nav>
 
+<!-- Mobile Menu Dropdown -->
+<div id="mobile-menu" style="display:none;position:fixed;top:72px;left:0;right:0;background:rgba(0,0,0,0.95);z-index:49;padding:24px;border-bottom:1px solid rgba(255,255,255,0.1);">
+  <ul style="display:flex;flex-direction:column;gap:16px;list-style:none;margin:0;padding:0;">
+    <li><a href="#hero" onclick="toggleMobileMenu()" style="color:white;font-weight:700;text-transform:uppercase;font-size:0.9rem;text-decoration:none;letter-spacing:0.1em;">Home</a></li>
+    <li><a href="#about" onclick="toggleMobileMenu()" style="color:white;font-weight:700;text-transform:uppercase;font-size:0.9rem;text-decoration:none;letter-spacing:0.1em;">About</a></li>
+    <li><a href="#membership" onclick="toggleMobileMenu()" style="color:white;font-weight:700;text-transform:uppercase;font-size:0.9rem;text-decoration:none;letter-spacing:0.1em;">Membership</a></li>
+    <li><a href="#stories" onclick="toggleMobileMenu()" style="color:white;font-weight:700;text-transform:uppercase;font-size:0.9rem;text-decoration:none;letter-spacing:0.1em;">Stories</a></li>
+    <li><a href="#contact" onclick="toggleMobileMenu()" style="color:white;font-weight:700;text-transform:uppercase;font-size:0.9rem;text-decoration:none;letter-spacing:0.1em;">Contact</a></li>
+    <li><button onclick="openForm();toggleMobileMenu();" style="background:#facc15;color:black;padding:12px 24px;font-weight:900;text-transform:uppercase;font-style:italic;border:none;border-radius:8px;cursor:pointer;font-size:0.9rem;">Start Your Journey →</button></li>
+  </ul>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+
 <!-- BEGIN: Hero Section -->
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
   <img alt="Intense Training" class="absolute inset-0 w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgguMwSuE1m-LPYGMk7Iuipr3Vg_srMz_O1W8-Cxr3BvGVA17nvXEPY3kdrFbIaIswqdUflnxg45WhAWSLRXzICIYgUdtYO0ZufUSy0-9KJAvviadzxFevPxSeQ8Y0-2lzS4eIa7Rs0n87EVgdvXQ7grdmXS406gRLbE7xI18-kjcCEnNt15-27clI2TG4LO24LtsST6fcHC1D2LYkSU_IRIkBlUZ47PBMreKsgYzjcO50bwhAjUGa21Ix2LrarKU4ichDR3moPlk"/>
   <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent"></div>
   <div class="relative z-10 container mx-auto px-6 pt-20">
@@ -264,7 +285,7 @@
 </section>
 
 <!-- BEGIN: Personal Training -->
-<section class="py-24 container mx-auto px-6">
+<section id="about" class="py-24 container mx-auto px-6">
   <div class="flex flex-col md:flex-row gap-16 items-center">
     <div class="w-full md:w-1/2 relative">
       <img alt="Trainer" class="rounded-3xl custom-shadow relative z-10 w-full h-[600px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDat-aUr24bCngjxhWAJ3dQj9t8yfUvmDkkK9qsfDU0WrZ0Yemo924bxfgAwdD5wt4YZNVtmq93vZ6wYu1jDaj9HZ2A0JRau-vQhC1fSGULyengVnEc_5y2AJ-JrTOP4wuEnGdCdjzzoZxDslv5xVwR89Sc15AM1NVHh8XCWCreZlFD2RqNk0_jjycSy8qG34EbaQoRZoLDTHeZsA8FqXF7C1Gv8uKVOOizS3bmrsRG1l7fz_RZZyszWzowxsCPwxkbOLoC3gZFDGM"/>
@@ -302,7 +323,7 @@
 </section>
 
 <!-- BEGIN: Membership Plans -->
-<section class="bg-[#1a1a1a] py-24">
+<section id="membership" class="bg-[#1a1a1a] py-24">
   <div class="container mx-auto px-6">
     <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
       <h2 class="text-5xl md:text-6xl font-black uppercase italic">Flexible Membership<br/>To Suit Your Lifestyle</h2>
@@ -378,7 +399,7 @@
 </section>
 
 <!-- BEGIN: Success Stories -->
-<section class="bg-yellow-400 text-black py-24">
+<section id="stories" class="bg-yellow-400 text-black py-24">
   <div class="container mx-auto px-6">
     <div class="flex flex-col lg:flex-row gap-16">
       <div class="lg:w-1/3">
@@ -406,7 +427,7 @@
 </section>
 
 <!-- BEGIN: Newsletter & Map -->
-<section class="py-24 container mx-auto px-6">
+<section id="contact" class="py-24 container mx-auto px-6">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
     <div>
       <h2 class="text-4xl md:text-5xl font-black uppercase italic mb-8 leading-tight">Signup our newsletter to get update information, insight or news.</h2>
@@ -452,19 +473,19 @@
       <div>
         <h4 class="font-black uppercase italic mb-6">Menu</h4>
         <ul class="space-y-3 text-sm font-bold text-zinc-600">
-          <li><a class="hover:text-black" href="#">Home</a></li>
-          <li><a class="hover:text-black" href="#">Membership</a></li>
-          <li><a class="hover:text-black" href="#">About</a></li>
-          <li><a class="hover:text-black" href="#">Blog</a></li>
+          <li><a class="hover:text-black" href="#hero">Home</a></li>
+          <li><a class="hover:text-black" href="#membership">Membership</a></li>
+          <li><a class="hover:text-black" href="#about">About</a></li>
+          <li><a class="hover:text-black" href="#stories">Stories</a></li>
         </ul>
       </div>
       <div>
         <h4 class="font-black uppercase italic mb-6">Quick Links</h4>
         <ul class="space-y-3 text-sm font-bold text-zinc-600">
-          <li><a class="hover:text-black" href="#">Login</a></li>
-          <li><a class="hover:text-black" href="#">Register</a></li>
-          <li><a class="hover:text-black" href="#">Contact Us</a></li>
-          <li><a class="hover:text-black" href="#">Privacy Policy</a></li>
+          <li><a class="hover:text-black" href="#hero">Home</a></li>
+          <li><a class="hover:text-black" href="#membership">Register</a></li>
+          <li><a class="hover:text-black" href="#contact">Contact Us</a></li>
+          <li><a class="hover:text-black" href="#contact">Privacy Policy</a></li>
         </ul>
       </div>
       <div>
